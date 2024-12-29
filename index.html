@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Nginx Service</title>
+
+    <style>
+        /* Gaya dasar */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Header dan footer border */
+        .header, .footer {
+            background-color: yellow;
+            height: 4cm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Logo di pojok kanan atas */
+        .header img {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            height: 4cm;
+        }
+	.header h1 {
+            font-size: 36px;
+            text-align: left; /* Mengatur teks berada di kanan */
+            line-height: 1.2;
+            margin: 0;
+            white-space: normal;
+            word-wrap: break-word;
+            flex: 1;
+            padding-right: 20px; /* Memberikan sedikit jarak di sisi kanan */
+        }
+
+        /* Kontainer utama */
+        .main {
+            padding: 20px;
+            overflow-y: scroll;
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+	.main h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .reminder {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+            animation: slide 10s linear infinite;
+            text-align: center;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .film-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .film {
+            position: relative;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .film img {
+            width: 100%;
+            height: 300px; /* Atur tinggi gambar */
+            object-fit: cover; /* Menjaga rasio gambar */
+            border-radius: 10px;
+        }
+
+        .film h2 {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .film .synopsis {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .film:hover .synopsis {
+            opacity: 1;
+        }
+
+        /* Footer styling */
+        .footer {
+            position: relative;
+            z-index: 0;
+            background-color: yellow;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Portal Yang Dibuat Untuk Memenuhi Tugas Arsitektur dan Sistem Operasi Komputer<br>Yang Dibuat Dengan Kasih Sayang Mahasiswa Baru Semester 1<br>Dengan Durasi Memusingkan Kami 4 hari 3 malam</h1>
+        <img src="logo.png" alt="Logo Kampus">
+    </div>
+    <div class="main">
+	<h2> Daftar Film Dan Series Yang Akan Ditonton Setelah Ujian Berakhir</h2>
+	<div class="reminder">
+	    <p>Reminder: Jadwal Ujian Akhir Semester Akan Dimulai pada 4 Januari 2025 Mahasiswa Diharap Tidak Tipes, Terimakasih. </p>
+	</div>
+
+        <div class="film-list">
+            <div class="film">
+                <img src="film1.png" alt="Pengabdi Setan 2">
+                <h2>Pengabdi Setan 2</h2>
+                <div class="synopsis">
+                    Seorang ibu kembali dari kematian untuk menghantui keluarganya.
+                </div>
+            </div>
+            <div class="film">
+                <img src="film2.png" alt="Mariposa">
+                <h2>Mariposa</h2>
+                <div class="synopsis">
+                    Kisah cinta remaja penuh warna antara Acha dan Iqbal.
+                </div>
+            </div>
+            <div class="film">
+                <img src="film 3.png" alt="Wednesday">
+                <h2>Wednesday</h2>
+                <div class="synopsis">
+                    Petualangan Wednesday Addams saat menyelidiki misteri di sekolahnya.
+                </div>
+            </div>
+            <div class="film">
+                <img src="film4.png" alt="AGAK LAEN">
+                <h2>AGAK LAEN</h2>
+		<div class="synopsis">
+       		    mengisahkan tentang empat petugas rumah hantu, Boris, Jegel, Bene, dan Oki, yang bertugas menakut-nakuti pengunjung di sebuah pasar malam. Namun, rumah hantu tempat mereka bekerja sama sekali nggak menimbulkan kesan seram pada pengunjung. Bahkan, upaya mereka untuk menakuti malah gagal total.
+		</div>
+            </div>
+            <div class="film">
+                <img src="film5.png" alt="When The Phone Rings">
+                <h2>When The Phone Rings</h2>
+		<div class="synopsis">
+		    romance-thriller yang mengisahkan tentang pernikahan yang didasarkan pada kepentingan politik dan status, serta penculikan yang mengubah dinamika hubungannya,
+		</div>							
+            </div>
+            <div class="film">
+                <img src="film6.png" alt="Moana">
+                <h2>Moana</h2>
+		<div class="synopsis">
+		    Moana memulai petualangan berlayar dengan perahu untuk meyakinkan Maui, si sosok setengah-dewa, agar mengembalikan hati sang dewi, Te Fitti, setelah panen gagal dan ikan-ikan di pulaunya mulai mati.
+		</div>
+            </div>
+            <div class="film">
+                <img src="film7.png" alt="Suzanna: Malam Jumat Kliwon">
+                <h2>Suzanna: Malam Jumat Kliwon</h2>
+		<div class="synopsis">
+		    Suzzanna disantet pada malam Jumat Kliwon. Ia datang kembali untuk membalas dendam, dalam wujud Sundel Bolong.
+		</div>
+            </div>
+	    <div class="film">
+		<img src="film8.png" alt="Hidden Love">
+		<h2>Hidden Love</h2>
+		<div class="synopsis">
+		    Mengisahkan Kedua Orang yang keren abiez trus ya gitu dech they're fallin in lop cie cie
+		</div>
+	    </div>		
+            <!-- Tambahkan lebih banyak film di sini -->
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024E Alya Faricha & Hopipah Indah. All rights reserved.</p>
+    </div>
+</body>
+</html>
+
